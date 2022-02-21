@@ -14,7 +14,13 @@ body {
 #footer {
     position: absolute;
     width: 100%;
+    display: inline-block;
 }
+
+#footer div {
+    display: inline-block;
+}
+
 .inline {
     display: inline-block!important;
     margin: 8px;
@@ -27,8 +33,6 @@ body {
 }
 .tab-img {
     margin: 16px;
-    max-width:50%;
-    max-height:50%;
     width: auto;
     height: auto;
 }
@@ -48,20 +52,55 @@ body {
 .popover{
     z-index: 99999;
 }
+
+p a {
+    color: gray;
+}
+
 .contact {
-    margin-right: 128px;
+    margin-right: 32px;
+    display:inline-block;
+    margin-bottom: 32px;
 }
 .contact p {
     margin: 8px!important;
     position: absolute;
-    display:inline-flex;
+    display:block;
     margin-left: 72px!important;
 }
 .containers-style{
-    background-color: #A9A9A9;
+    background-color: #101010;
+    color: white;
     text-align: center;
     border-radius: 15px;
     margin-top: 64px;
     padding-top: 20px;
     padding-bottom: 20px;
   }
+
+.input-group {
+    width: 400px!important;
+    margin: 32px;
+    left: 15%;
+}
+
+.supp div{ 
+    display: inline-block;  
+}
+.supp .card-body{
+    border-style: solid;
+    border-radius: 16px;
+    width: 400px;
+    height: 350px;
+}
+
+.btn {
+    margin: 0!important;
+}
+
+#cards .card {
+    height: 400px;
+}
+#cards p {
+    height: 50px;
+}

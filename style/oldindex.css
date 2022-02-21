@@ -29,6 +29,16 @@
 
     border-radius: 16px;
 }
+
+.tab img {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0.3;
+}
 @keyframes fadeOut {
     from {opacity: 0;}
     to {opacity: 1;}

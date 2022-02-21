@@ -4,11 +4,15 @@
     <link href="style/index.css" type="text/css" rel="stylesheet">
     <link href="style/oldindex.css" type="text/css" rel="stylesheet">
     <link href="style/theme.css" type="text/css" rel="stylesheet">
+    <script src="jquery-3.5.1.min.js"></script>
     <link href="assets/favicon.png" type="image/png" rel="icon" sizes="32x32"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    
     <title>CoalWeb</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
 </head>
@@ -56,34 +60,29 @@
                         <a class="nav-link" href="#cards"><i class="fas fa-truck-moving" style="color: white"></i> Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#footer"><i class="fas fa-address-book" style="color:firebrick"></i> Authors</a>
+                        <a class="nav-link" href="#footer"><i class="fas fa-address-book" style="color:white"></i> Authors</a>
                     </li>
                 </ul>
                 <!--------------------->
             </nav>
 
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="box-shadow: 0 0 10px rgba(0,0,0,1); margin-bottom: 64px; margin-top: 100px;">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" style="box-shadow: 0 0 10px rgba(0,0,0,1); margin-bottom: 64px; margin-top: 100px; height: 120px;">
                 <div class="carousel-inner">
-                  <div class="carousel-item active" style="max-height: 640px;">
+                  <div class="carousel-item active" style="max-height: 320px;height: 320px;">
                     <img src="https://images.theconversation.com/files/125332/original/image-20160606-26003-1hjtcr5.jpg?ixlib=rb-1.1.0&rect=0%2C962%2C5184%2C2514&q=45&auto=format&w=1356&h=668&fit=crop" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Coal is burning</h5>
                       <p>Its heat capacity is effective</p>
                     </div>
                   </div>
-                  <div class="carousel-item" style="max-height: 640px;">
+                  <div class="carousel-item" style="max-height: 320px; height: 320px;">
                     <img src="https://www.aljazeera.com/wp-content/uploads/2021/09/374852504.jpg?resize=1200%2C630" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Coal mining with tractors</h5>
                       <p>Big infrastructure</p>
                     </div>
                   </div>
-                  <div class="carousel-item" style="max-height: 640px;">
+                  <div class="carousel-item" style="max-height: 320px;height: 320px;">
                     <img src="https://www.aljazeera.com/wp-content/uploads/2019/09/4f967cf435c74598a701230c00a309e8_18.jpeg?resize=770%2C513" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5>Electricity</h5>
@@ -91,19 +90,13 @@
                     </div>
                   </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
               </div>
 
             <div class="fixed tab" id="tab1">
+                <img src="https://ar.culture.ru/attachments/attachment/preview/5cb828a3ec8a5738b4415c72-preview.jpg" class="rounded mx-auto d-block tab-img" alt="anthracite" style="margin:0; border-radius: 128px;">
                 <div style="overflow-y:scroll;height: 100%;">
-                <img src="https://ar.culture.ru/attachments/attachment/preview/5cb828a3ec8a5738b4415c72-preview.jpg" class="rounded mx-auto d-block tab-img" alt="anthracite">
+                <div class="row">
+                    <div class="col-2" style="width:50%; ">
                 <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
                     <h1>Anthracite</h1>
                     <p>
@@ -113,50 +106,94 @@
                         esidues as a result of humification and carbonification.<br>
                     </p>
                 </div>
-                <div style="margin-left: 10%; margin-right: 10%; margin-top: 2%; margin-bottom: 2%;">
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;"></div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 1</div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 2</div>
+                <div class="supp">
+                    <div class= "container-fluid">
+                            <div class="card">
+                              <div class="card-body">
+                              <h4 class="card-title">Eastern embers</h4>
+                              <p class="card-text">
+                                <table class="table">
+                              
+                              <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Description</th>
+                              </tr>
+                              </thead>
+                              
+                              <tbody>
+                                <tr>
+                                    <th>Quality</th>
+                                    <td>The highest quality coals in the East</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Time calculation</th>
+                                    <td>5-10 days after order</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Rating</th>
+                                    <td>4.9</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Price</th>
+                                    <td>3000$ per ton</td>
+                                </tr>
+                              </tbody>
+                
+                            </table>
+                            </div>
+                            </div>
+                
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">The Creed Brothers</h4>
+                    <p class="card-text">
+                      <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <th>Quality</th>
+                            <td>Average coal</td>
+                        </tr>
+                        <tr>
+                            <th>Time calculation</th>
+                            <td>20 days after order</td>
+                        </tr>
+                        <tr>
+                            <th>Rating</th>
+                            <td>4.0</td>
+                        </tr>
+                        <tr>
+                            <th >Price</th>
+                            <td>2000$ per ton</td>
+                        </tr>
+                      </tbody>
+                  </table>
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Price per unit</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
+                </div></div>
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Quantity</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Heat capacity</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Chemical composition</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                </div>
-                </div>
-                <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
-                    <h1>Usage</h1>
-                    <p>
-                        You can make unlimited use of this natural resource <br>
-                        in all kinds of fields of activity. Outdoors, in the suburbs <br>
-                        or in your backyard. This is an excellent material extracted <br>
-                        in the most mineral-rich nature reserves. <br>
-                    </p>
-                </div>
+                
                 <div style="margin:16px;">
+                </div>
+            </div>
+                <div class="col-2" style="width:50%; align-items: center;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
                     <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
-                    <button type="button" class="btn btn-success" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
+                </div>
+                <div class="input-group mb-3" style="right: 0;">
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
                       <script>
                         $(document).ready(function(){
                           $('[data-toggle="popover"]').popover({
@@ -167,51 +204,134 @@
                           });
                         });
                     </script>
-                  </div>
                 </div>
+                <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
+                    <h1>Usage</h1>
+                    <p>
+                        You can make unlimited use of this natural resource <br>
+                        in all kinds of fields of activity. Outdoors, in the suburbs <br>
+                        or in your backyard. This is an excellent material extracted <br>
+                        in the most mineral-rich nature reserves. <br>
+                    </p>
+                </div>
+                </div>
+            </div>
                 </div>
                 <a href="#" class="btn btn-danger cross-button square" onclick="tabcloseall();"><i class="far fa-times-circle"></i></a>
             </div>
+            </div>
             <div class="fixed tab" id="tab2">
+                <img src="https://geographyofrussia.com/wp-content/uploads/2009/05/kamen-ugol.jpg" class="rounded mx-auto d-block tab-img" alt="anthracite" style="margin:0; border-radius: 128px;">
                 <div style="overflow-y:scroll;height: 100%;">
-                <img src="https://geographyofrussia.com/wp-content/uploads/2009/05/kamen-ugol.jpg" class="rounded mx-auto d-block tab-img" alt="Antracite">
+                <div class="row">
+                    <div class="col-2" style="width:50%; ">
                 <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
                     <h1>Coal</h1>
                     <p>
-                        According to its chemical composition, coal is a mixture of high-molecular polycyclic aromatic compounds <br>
-                        with a high mass fraction of carbon, as well as water and volatile substances with small amounts of mineral <br>
-                        impurities that form ash when burning coal. Fossil coals differ from each other in the ratio of their constituent <br>
-                        components, which determines their heat of combustion.<br>
+                      According to its chemical composition, coal is a mixture of high-molecular polycyclic aromatic compounds <br>
+                      with a high mass fraction of carbon, as well as water and volatile substances with small amounts of mineral <br>
+                      impurities that form ash when burning coal. Fossil coals differ from each other in the ratio of their constituent <br>
+                      components, which determines their heat of combustion.<br>
                     </p>
                 </div>
-                <div style="margin-left: 10%; margin-right: 10%; margin-top: 2%; margin-bottom: 2%;">
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;"></div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 1</div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 2</div>
+                <div class="supp">
+                    <div class= "container-fluid">
+                            <div class="card">
+                              <div class="card-body">
+                              <h4 class="card-title">Eastern embers</h4>
+                              <p class="card-text">
+                                <table class="table">
+                              
+                              <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Description</th>
+                              </tr>
+                              </thead>
+                              
+                              <tbody>
+                                <tr>
+                                    <th>Quality</th>
+                                    <td>The highest quality coals in the East</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Time calculation</th>
+                                    <td>5-10 days after order</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Rating</th>
+                                    <td>3.1</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Price</th>
+                                    <td>2000$ per ton</td>
+                                </tr>
+                              </tbody>
+                
+                            </table>
+                            </div>
+                            </div>
+                
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">The Creed Brothers</h4>
+                    <p class="card-text">
+                      <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <th>Quality</th>
+                            <td>Average coal</td>
+                        </tr>
+                        <tr>
+                            <th>Time calculation</th>
+                            <td>20 days after order</td>
+                        </tr>
+                        <tr>
+                            <th>Rating</th>
+                            <td>2.0</td>
+                        </tr>
+                        <tr>
+                            <th >Price</th>
+                            <td>1000$ per ton</td>
+                        </tr>
+                      </tbody>
+                  </table>
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Price per unit</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
+                </div></div>
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Quantity</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
+                
+                <div style="margin:16px;">
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Heat capacity</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
+            </div>
+                <div class="col-2" style="width:50%; align-items: center;">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Chemical composition</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
                 </div>
+                <div class="input-group mb-3" style="right: 0;">
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
+                      <script>
+                        $(document).ready(function(){
+                          $('[data-toggle="popover"]').popover({
+                            html : true,
+                            trigger:"active",
+                            sanitize: false,
+                            content : '<iframe width="420" height="315" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" allow="autoplay; encrypted-media"> </iframe><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">В 300 метрах от вас уголь!</a>'
+                          });
+                        });
+                    </script>
                 </div>
                 <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
                     <h1>Usage</h1>
@@ -222,12 +342,113 @@
                       in the most mineral-rich nature reserves. <br>
                     </p>
                 </div>
+                </div>
+            </div>
+                </div>
+                <a href="#" class="btn btn-danger cross-button square" onclick="tabcloseall();"><i class="far fa-times-circle"></i></a>
+            </div>
+            </div>
+            <div class="fixed tab" id="tab3">
+                <img src="assets/brown coal.png" class="rounded mx-auto d-block tab-img" alt="anthracite" style="margin:0; border-radius: 128px;">
+                <div style="overflow-y:scroll;height: 100%;">
+                <div class="row">
+                    <div class="col-2" style="width:50%; ">
+                <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
+                    <h1>Brown coal</h1>
+                    <p>
+                      They are formed from dead organic residues <br>
+                        under load pressure and under the influence <br>
+                        of elevated temperature at depths of about one kilometer. <br>
+                    </p>
+                </div>
+                <div class="supp">
+                    <div class= "container-fluid">
+                            <div class="card">
+                              <div class="card-body">
+                              <h4 class="card-title">Eastern embers</h4>
+                              <p class="card-text">
+                                <table class="table">
+                              
+                              <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Description</th>
+                              </tr>
+                              </thead>
+                              
+                              <tbody>
+                                <tr>
+                                    <th>Quality</th>
+                                    <td>The highest quality coals in the East</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Time calculation</th>
+                                    <td>5-10 days after order</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Rating</th>
+                                    <td>4.9</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Price</th>
+                                    <td>3000$ per ton</td>
+                                </tr>
+                              </tbody>
+                
+                            </table>
+                            </div>
+                            </div>
+                
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">The Creed Brothers</h4>
+                    <p class="card-text">
+                      <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <th>Quality</th>
+                            <td>Average coal</td>
+                        </tr>
+                        <tr>
+                            <th>Time calculation</th>
+                            <td>20 days after order</td>
+                        </tr>
+                        <tr>
+                            <th>Rating</th>
+                            <td>4.0</td>
+                        </tr>
+                        <tr>
+                            <th >Price</th>
+                            <td>2000$ per ton</td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </div>
+                </div></div>
+                </div>
+                
                 <div style="margin:16px;">
+                </div>
+            </div>
+                <div class="col-2" style="width:50%; align-items: center;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
                     <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
-                    <button type="button" class="btn btn-success" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
+                </div>
+                <div class="input-group mb-3" style="right: 0;">
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
                       <script>
                         $(document).ready(function(){
                           $('[data-toggle="popover"]').popover({
@@ -238,50 +459,6 @@
                           });
                         });
                     </script>
-                  </div>
-                </div>
-                </div>
-                <a href="#" class="btn btn-danger cross-button square" onclick="tabcloseall();"><i class="far fa-times-circle"></i></a>
-            </div>
-            <div class="fixed tab" id="tab3">
-                <div style="overflow-y:scroll;height: 100%;">
-                <img src="assets/brown coal.png" class="rounded mx-auto d-block tab-img" alt="Antracite">
-                <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
-                    <h1>Brown coal</h1>
-                    <p>
-                        They are formed from dead organic residues <br>
-                        under load pressure and under the influence <br>
-                        of elevated temperature at depths of about one kilometer. <br>
-                    </p>
-                </div>
-                <div style="margin-left: 10%; margin-right: 10%; margin-top: 2%; margin-bottom: 2%;">
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;"></div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 1</div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 2</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Price per unit</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Quantity</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Heat capacity</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Chemical composition</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                </div>
                 </div>
                 <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
                     <h1>Usage</h1>
@@ -292,30 +469,17 @@
                         in the most mineral-rich nature reserves. <br>
                     </p>
                 </div>
-                <div style="margin:16px;">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                    <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
-                    <button type="button" class="btn btn-success" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
-                      <script>
-                        $(document).ready(function(){
-                          $('[data-toggle="popover"]').popover({
-                            html : true,
-                            trigger:"active",
-                            sanitize: false,
-                            content : '<iframe width="420" height="315" src="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" allow="autoplay; encrypted-media"> </iframe><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">В 300 метрах от вас уголь!</a>'
-                          });
-                        });
-                    </script>
-                  </div>
                 </div>
+            </div>
                 </div>
                 <a href="#" class="btn btn-danger cross-button square" onclick="tabcloseall();"><i class="far fa-times-circle"></i></a>
             </div>
+            </div>
             <div class="fixed tab" id="tab4">
+                <img src="assets/Charcoal.png" class="rounded mx-auto d-block tab-img" alt="anthracite" style="margin:0; border-radius: 128px;">
                 <div style="overflow-y:scroll;height: 100%;">
-                <img src="assets/Charcoal.png" class="rounded mx-auto d-block tab-img" alt="Antracite">
+                <div class="row">
+                    <div class="col-2" style="width:50%; ">
                 <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
                     <h1>Charcoal</h1>
                     <p>
@@ -325,50 +489,94 @@
                       and emit very little smoke. <br>
                     </p>
                 </div>
-                <div style="margin-left: 10%; margin-right: 10%; margin-top: 2%; margin-bottom: 2%;">
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;"></div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 1</div>
-                    <div class="col" style="background-color: grey; color: white;">Supplier 2</div>
+                <div class="supp">
+                    <div class= "container-fluid">
+                            <div class="card">
+                              <div class="card-body">
+                              <h4 class="card-title">Eastern embers</h4>
+                              <p class="card-text">
+                                <table class="table">
+                              
+                              <thead>
+                              <tr>
+                                <th>#</th>
+                                <th>Description</th>
+                              </tr>
+                              </thead>
+                              
+                              <tbody>
+                                <tr>
+                                    <th>Quality</th>
+                                    <td>The highest quality coals in the East</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Time calculation</th>
+                                    <td>5-10 days after order</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Rating</th>
+                                    <td>4.9</td>
+                                </tr>
+                                
+                                <tr>
+                                    <th>Price</th>
+                                    <td>3000$ per ton</td>
+                                </tr>
+                              </tbody>
+                
+                            </table>
+                            </div>
+                            </div>
+                
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">The Creed Brothers</h4>
+                    <p class="card-text">
+                      <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                            <th>Quality</th>
+                            <td>Average coal</td>
+                        </tr>
+                        <tr>
+                            <th>Time calculation</th>
+                            <td>20 days after order</td>
+                        </tr>
+                        <tr>
+                            <th>Rating</th>
+                            <td>4.0</td>
+                        </tr>
+                        <tr>
+                            <th >Price</th>
+                            <td>2000$ per ton</td>
+                        </tr>
+                      </tbody>
+                  </table>
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Price per unit</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
+                </div></div>
                 </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Quantity</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
-                    <div class="col" style="background-color: grey; color: white;">---</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: lightgray;">Heat capacity</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                    <div class="col" style="background-color: lightgray;">---</div>
-                </div>
-                <div class="row">
-                    <div class="col" style="background-color: grey; color: white;">Chemical composition</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                    <div class="col-2" style="background-color: grey; color: white;">--</div>
-                </div>
-                </div>
-                <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
-                    <h1>Usage</h1>
-                    <p>
-                        You can make unlimited use of this natural resource <br>
-                        in all kinds of fields of activity. Outdoors, in the suburbs <br>
-                        or in your backyard. This is an excellent material extracted <br>
-                        in the most mineral-rich nature reserves. <br>
-                    </p>
-                </div>
+                
                 <div style="margin:16px;">
+                </div>
+            </div>
+                <div class="col-2" style="width:50%; align-items: center;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
                     <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
-                    <button type="button" class="btn btn-success" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title=''data-trigger="hover" data-bs-content="">Buy!</button>
+                </div>
+                <div class="input-group mb-3" style="right: 0;">
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
                       <script>
                         $(document).ready(function(){
                           $('[data-toggle="popover"]').popover({
@@ -379,19 +587,30 @@
                           });
                         });
                     </script>
-                  </div>
                 </div>
+                <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
+                    <h1>Usage</h1>
+                    <p>
+                        You can make unlimited use of this natural resource <br>
+                        in all kinds of fields of activity. Outdoors, in the suburbs <br>
+                        or in your backyard. This is an excellent material extracted <br>
+                        in the most mineral-rich nature reserves. <br>
+                    </p>
+                </div>
+                </div>
+            </div>
                 </div>
                 <a href="#" class="btn btn-danger cross-button square" onclick="tabcloseall();"><i class="far fa-times-circle"></i></a>
             </div>
+            </div>
 
-            <div class="container item-center" id="cards">
+            <div class="container item-center" id="cards" style="margin-top: -300px;">
                 <div class="card inline" style="width: 18rem;">
                     <img src="https://ar.culture.ru/attachments/attachment/preview/5cb828a3ec8a5738b4415c72-preview.jpg" class="card-img-top" alt="Antracite">
                     <div class="card-body">
                         <h5 class="card-title">Antracite</h5>
                         <p class="card-text">High quality and efficient option.</p>
-                        <a href="#" class="btn btn-primary" onclick="tab('tab1');"><i class="fas fa-info" style="color:#ef0097; padding-left: 32px; padding-right: 32px;"></i></a>
+                        <a href="#" class="btn btn-primary" onclick="tab('tab1');"><i class="fas fa-info" style="color:#000000; padding-left: 32px; padding-right: 32px;"></i></a>
                     </div>
                 </div>
                 <div class="card inline" style="width: 18rem;">
@@ -399,7 +618,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Coal</h5>
                         <p class="card-text">Demanded and best option.</p>
-                        <a href="#" class="btn btn-primary" onclick="tab('tab2');"><i class="fas fa-info" style="color:#ef0097; padding-left: 32px; padding-right: 32px;"></i></a>
+                        <a href="#" class="btn btn-primary" onclick="tab('tab2');"><i class="fas fa-info" style="color:#000000; padding-left: 32px; padding-right: 32px;"></i></a>
                     </div>
                 </div>
                 <div class="card inline" style="width: 18rem;">
@@ -407,7 +626,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Brown coal</h5>
                         <p class="card-text">Economical option.</p>
-                        <a href="#" class="btn btn-primary" onclick="tab('tab3');"><i class="fas fa-info" style="color:#ef0097; padding-left: 32px; padding-right: 32px;"></i></a>
+                        <a href="#" class="btn btn-primary" onclick="tab('tab3');"><i class="fas fa-info" style="color:#000000; padding-left: 32px; padding-right: 32px;"></i></a>
                     </div>
                 </div>
                 <div class="card inline" style="width: 18rem;">
@@ -415,13 +634,11 @@
                     <div class="card-body">
                         <h5 class="card-title">Charcoal</h5>
                         <p class="card-text">Variable and efficient option.</p>
-                        <a href="#" class="btn btn-primary" onclick="tab('tab4');"><i class="fas fa-info" style="color:#ef0097; padding-left: 32px; padding-right: 32px;"></i></a>
+                        <a href="#" class="btn btn-primary" onclick="tab('tab4');"><i class="fas fa-info" style="color:#000000; padding-left: 32px; padding-right: 32px;"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="container containers-style" ><br>
-                The company "miners diggers" extracts the best and most flammable coal. We guarantee you the best thermal conductivity and temperature. The ability to spin any steam or conventional engine up to 200 horsepower.
-                <br><br>
+            <div class="container containers-style" style="visibility: hidden;"><br>
               </div>
         </div>
         <!--Script to change tabs between-->
@@ -464,16 +681,100 @@
                 black.style.animation = '';
             }
 
+            var cards = document.getElementsByClassName("card");
+            for (var i = 0; i < cards.length; i++) {
+              cards[i].addEventListener("mouseover", function( event ) {
+                event.target.style.setProperty("color", "red");
+                  setTimeout(function() {
+                    event.target.style.setProperty("color", "");
+                  }, 500);
+                }, false);
+            }
+
+            var t1 = document.getElementById("tab1");
+            var t2 = document.getElementById("tab2");
+            var t3 = document.getElementById("tab3");
+            var t4 = document.getElementById("tab4");
+
+            let now = Date.now();
+            function timer(id) {
+              let time = Date.now() - now;
+              if (time*time / 1000 >= 2000) {
+                time = 0;
+                clearInterval(timer);
+                return;
+              }
+              anim(id, time);
+            }
+
+            function anim(id, i) {
+              switch(id) {
+                case 1:
+                  {
+                    t1.style.left = i*i / 3000 + 'px';
+                    console.log(time);
+                    break;
+                  }
+                  case 2:
+                  {
+                    t2.style.left = i*i / 3000 + 'px';
+                    console.log(time);
+                    break;
+                  }
+                  case 3:
+                  {
+                    t3.style.left = i*i / 3000 + 'px';
+                    console.log(time);
+                    break;
+                  }
+                  case 4:
+                  {
+                    t4.style.left = i*i / 3000 + 'px';
+                    console.log(time);
+                    break;
+                  }
+              }
+            }
+
+            addEventListener("keypress", function( event ) {
+              switch(event.key) {
+                case "1":{
+                  tab("tab1");
+                  now = Date.now();
+                  setInterval(timer.bind(null, 1), 10);
+                  break;
+                }
+                case "2":{
+                  tab("tab2");
+                  now = Date.now();
+                  setInterval(timer.bind(null, 2), 10);
+                  break;
+                }
+                case "3":{
+                  tab("tab3");
+                  now = Date.now();
+                  setInterval(timer.bind(null, 3), 10);
+                  break;
+                }
+                case "4":{
+                  tab("tab4");
+                  now = Date.now();
+                  setInterval(timer.bind(null, 4), 10);
+                  break;
+                }
+              }   
+            }, false);
+
         </script>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="footer">
-        <div class="container-fluid" style="margin-left: 25%; margin-right: 25%;">
+        <div class="" style="margin-left: 0%; margin-right: 0%; vertical-align: middle; margin: 16px;">
             <a style="color: white;"class="nav-link d-flex align-items-center contact" href="https://t.me/Ecl1ps0" id="navbarDropdown" role="button" aria-expanded="false">
                 <img
                     src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcToqVy8KeOaedkUXl4qh2dPXLuDBBgP68FhvinnPcBcTgtsSEac"
                     alt="Avatar"
                     loading="lazy"
                     style="border-radius: 100%; object-fit: cover; height:64px; width:64px;"/>
-                    <p>Daniil Tsoy</p>
+                    <p>Daniil Tsoy <br> Geodesist <br> Monitors the quality of the coal provided <br> Contact: +7 707 *** ** 39</p>
             </a>
             <a style="color: white;"class="nav-link d-flex align-items-center contact" href="https://t.me/tunaxxnew" id="navbarDropdown" role="button" aria-expanded="false">
                 <img
@@ -481,7 +782,7 @@
                     style="border-radius: 100%; object-fit: cover; height:64px; width:64px;"
                     alt="Avatar"
                     loading="lazy"/>
-                    <p>Nikita Mordvintsev</p>
+                    <p>Nikita Mordvintsev <br> Data scientist <br> Provides better preparation and transportation of goods <br> Contact: +7 771 ***  00</p>
             </a>
             <a style="color: white;"class="nav-link d-flex align-items-center contact" href="https://t.me/ygvfhl" id="navbarDropdown" role="button" aria-expanded="false">
                 <img
@@ -489,9 +790,32 @@
                     style="border-radius: 100%; object-fit: cover; height:64px; width:64px;"
                     alt="Avatar"
                     loading="lazy"/>
-                    <p>Islambek Turarbaev</p>
+                    <p>Islambek Turarbaev <br> Sales manager <br> Helps in case of problems with the order <br> Contact: +7 747 ***  15</p>
             </a>
         </div>
+        <div class="" style="margin-left: 40%; margin-right: 0%; height: 300px; vertical-align: middle; text-align: center;">
+          <img
+          src="assets/logo.png"
+          style="border-radius: 100%; object-fit: cover; height:64px; width:64px; width: 128px; height: auto;"
+          alt="Avatar"
+          loading="lazy"/>
+          <p style="color: white;">Our branches:<br>
+            <a href="https://www.erg.kz/ru">Shubar komir</a><br>
+            <a href="http://www.bogatyr.kz/">Bogatir komir</a><br>
+            Our shareholders<br>
+            <a href="https://www.angloamerican.com/">Anglo American Platinum</a><br>
+            <a href="https://www.teck.com/">Teck Resources</a><br></p>
+    </div>
       </nav>
     </div>
+
+    <script>
+      //Все элементы с классом bell при нажатии проигрывают звук
+      $(".bell").click(function() {
+        var audio = new Audio('assets/bell-sound.mp3');
+        audio.volume = 0.1;
+        audio.play();
+      });
+    </script>
+
 </body>
