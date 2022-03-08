@@ -4,7 +4,7 @@
     <link href="style/index.css" type="text/css" rel="stylesheet">
     <link href="style/oldindex.css" type="text/css" rel="stylesheet">
     <link href="style/theme.css" type="text/css" rel="stylesheet">
-    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="assets/favicon.png" type="image/png" rel="icon" sizes="32x32"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     
@@ -28,7 +28,7 @@
                 <div class="container-fluid">
                     
                     <a class="navbar-brand" href="#"><i class="fas fa-fire" style="color: tomato"></i> CoalWeb</a>
-                    <ul class="nav-item dropdown" style="margin-bottom: 0;">
+                    <ul class="nav-item dropdown" style="margin-bottom: 0; display: inline">
                         <a style="color: white;"class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" 
                         onclick="
                         var dropDownMenu = document.getElementById('menu');
@@ -36,19 +36,20 @@
                         dropDownMenu.style.animation = 'fadeOut 0.5s';
                         console.log(dropDownMenu);
                         ">
+                        <h5 id="userName" style="margin: 8px;"></h5>
                             <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ufprkxEh8BDjxK1a7TLmKLxeKnUWH0rpwg&usqp=CAU"
-                            class="rounded-circle"
-                            height="22"
+                            id="avatar"
                             alt="Avatar"
                             loading="lazy"
+                            style="width: 32px; height: 32px; object-fit:cover; border-radius: 100%;"
                           />
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="left:-90%; align-items:center;" id="menu">
-                          <li><a style="text-align: center;" class="dropdown-item" href="html/login.html">Sign In</a></li>
+                        <ul class="dropdown-menu center-size" aria-labelledby="navbarDropdown" style="align-items:center;" id="menu">
+                          <li><a style="text-align: center;" id="signin" class="dropdown-item">Sign In</a></li>
                           <li><a style="text-align: center;" class="dropdown-item" href="html/register.html">Sign Up</a></li>
                           <li><hr class="dropdown-divider"></li>
-                          <li><a style="text-align: center;" class="dropdown-item" href="#">Something else here</a></li>
+                          <li><a style="text-align: center;" id="profile" class="dropdown-item" href="">Profile</a></li>
                         </ul>
                     </li>
                 </div>
@@ -187,13 +188,35 @@
                 <div class="col-2" style="width:50%; align-items: center;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control email" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3" style="display: block; text-align: left;">
+                  <input type="radio" class="s1" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="1">Eastern embers<br>
+                  <input type="radio" class="s2" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="2">The Creed Brothers
                 </div>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                    <input type="" class="form-control quantity" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <p class="price"></p>
                 </div>
                 <div class="input-group mb-3" style="right: 0;">
-                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content=""  onclick='
+                    var str = t1.getElementsByTagName("input")[0].value;
+                    str = str.slice(str.indexOf("@"), str.length);
+                    if (str == "@gmail.com" || str == "@mail.ru") {
+                      if (t1.getElementsByClassName("s1")[0].checked) {
+                        bought(0, t1.getElementsByClassName("quantity")[0].value, 0);
+                      } else if (t1.getElementsByClassName("s2")[0].checked) {
+                        bought(0, t1.getElementsByClassName("quantity")[0].value, 1);
+                      } else {
+                        alert("Choose supplier!");
+                      }
+                      alert("You bought " + t1.getElementsByClassName("quantity")[0].value + " for " + t1.getElementsByClassName("price")[0].innerHTML);
+                    } else {
+                      alert("Fill email field, or we dont work with this email");
+                    }
+                    '>Buy!</button>
                       <script>
                         $(document).ready(function(){
                           $('[data-toggle="popover"]').popover({
@@ -315,13 +338,35 @@
                 <div class="col-2" style="width:50%; align-items: center;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control email" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3" style="display: block; text-align: left;">
+                  <input type="radio" class="s1" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="1">Eastern embers<br>
+                  <input type="radio" class="s2" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="2">The Creed Brothers
                 </div>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                    <input type="" class="form-control quantity" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <p class="price"></p>
                 </div>
                 <div class="input-group mb-3" style="right: 0;">
-                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="" onclick='
+                    var str = t2.getElementsByTagName("input")[0].value;
+                    str = str.slice(str.indexOf("@"), str.length);
+                    if (str == "@gmail.com" || str == "@mail.ru") {
+                      if (t2.getElementsByClassName("s1")[0].checked) {
+                        bought(1, t2.getElementsByClassName("quantity")[0].value, 0);
+                      } else if (t2.getElementsByClassName("s2")[0].checked) {
+                        bought(1, t2.getElementsByClassName("quantity")[0].value, 1);
+                      } else {
+                        alert("Choose supplier!");
+                      }
+                      alert("You bought " + t2.getElementsByClassName("quantity")[0].value + " for " + t2.getElementsByClassName("price")[0].innerHTML);
+                    } else {
+                      alert("Fill email field, or we dont work with this email");
+                    }
+                    '>Buy!</button>
                       <script>
                         $(document).ready(function(){
                           $('[data-toggle="popover"]').popover({
@@ -332,6 +377,7 @@
                           });
                         });
                     </script>
+                  <div class="input-group mb-3" style="right: 0;">
                 </div>
                 <div class="item-center" style="margin-left:32px; margin-right:32px; margin-top: 16px; margin-bottom: 16px;">
                     <h1>Usage</h1>
@@ -442,13 +488,35 @@
                 <div class="col-2" style="width:50%; align-items: center;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control email" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3" style="display: block; text-align: left;">
+                  <input type="radio" class="s1" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="1">Eastern embers<br>
+                  <input type="radio" class="s2" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="2">The Creed Brothers
                 </div>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                    <input type="" class="form-control quantity" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <p class="price"></p>
                 </div>
                 <div class="input-group mb-3" style="right: 0;">
-                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="" onclick='
+                    var str = t3.getElementsByTagName("input")[0].value;
+                    str = str.slice(str.indexOf("@"), str.length);
+                    if (str == "@gmail.com" || str == "@mail.ru") {
+                      if (t3.getElementsByClassName("s1")[0].checked) {
+                        bought(2, t3.getElementsByClassName("quantity")[0].value, 0);
+                      } else if (t3.getElementsByClassName("s2")[0].checked) {
+                        bought(2, t3.getElementsByClassName("quantity")[0].value, 1);
+                      } else {
+                        alert("Choose supplier!");
+                      }
+                      alert("You bought " + t3.getElementsByClassName("quantity")[0].value + " for " + t3.getElementsByClassName("price")[0].innerHTML);
+                    } else {
+                      alert("Fill email field, or we dont work with this email");
+                    }
+                    '>Buy!</button>
                       <script>
                         $(document).ready(function(){
                           $('[data-toggle="popover"]').popover({
@@ -570,13 +638,35 @@
                 <div class="col-2" style="width:50%; align-items: center;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control email" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3" style="display: block; text-align: left;">
+                  <input type="radio" class="s1" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="1">Eastern embers<br>
+                  <input type="radio" class="s2" placeholder="The supplier" aria-label="The supplier" aria-describedby="basic-addon1" name="browser" value="2">The Creed Brothers
                 </div>
                 <div class="input-group mb-3">
-                    <input type="number" class="form-control" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                    <input type="" class="form-control quantity" placeholder="Quantity" aria-label="Quantity" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <p class="price"></p>
                 </div>
                 <div class="input-group mb-3" style="right: 0;">
-                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="">Buy!</button>
+                    <button type="button" class="btn btn-success bell" style="margin-left: 16px" data-toggle="popover" data-bs-placement="top" title='' data-bs-content="" onclick='
+                    var str = t4.getElementsByTagName("input")[0].value;
+                    str = str.slice(str.indexOf("@"), str.length);
+                    if (str == "@gmail.com" || str == "@mail.ru") {
+                      if (t4.getElementsByClassName("s1")[0].checked) {
+                        bought(3, t4.getElementsByClassName("quantity")[0].value, 0);
+                      } else if (t4.getElementsByClassName("s2")[0].checked) {
+                        bought(3, t4.getElementsByClassName("quantity")[0].value, 1);
+                      } else {
+                        alert("Choose supplier!");
+                      }
+                      alert("You bought " + t4.getElementsByClassName("quantity")[0].value + " for " + t4.getElementsByClassName("price")[0].innerHTML);
+                    } else {
+                      alert("Fill email field, or we dont work with this email");
+                    }
+                    '>Buy!</button>
                       <script>
                         $(document).ready(function(){
                           $('[data-toggle="popover"]').popover({
@@ -643,6 +733,7 @@
         </div>
         <!--Script to change tabs between-->
         <script type="text/javascript" rel="script">
+          tabcloseall();
             window.addEventListener("load", function() {
                 tabcloseall();
             });
@@ -696,6 +787,132 @@
             var t3 = document.getElementById("tab3");
             var t4 = document.getElementById("tab4");
 
+            //
+            //TAB inputs
+            //One Tab 1
+            t1.getElementsByClassName("s1")[0].addEventListener("click", function (e) {
+              var str = t1.getElementsByClassName("quantity")[0].value;
+              t1.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t1, 3, 2);
+              t1.getElementsByClassName("quantity")[0].value = str;
+            });
+            t1.getElementsByClassName("s2")[0].addEventListener("click", function (e) {
+              var str = t1.getElementsByClassName("quantity")[0].value;
+              t1.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t1, 3, 2);
+              t1.getElementsByClassName("quantity")[0].value = str;
+            });
+
+            t1.getElementsByClassName("quantity")[0].addEventListener("click", function(e) {
+              this.value = "";
+            });
+            t1.getElementsByClassName("quantity")[0].addEventListener("input", function(e) {
+              updateTabInputs(t1, 3, 2);
+            });
+            t1.getElementsByClassName("quantity")[0].addEventListener("change", function(e) {
+              this.value = this.value + " kg";
+            });
+            //
+            // Tab input end
+            //
+
+            //
+            //TAB inputs
+            //One Tab 1
+            t3.getElementsByClassName("s1")[0].addEventListener("click", function (e) {
+              var str = t3.getElementsByClassName("quantity")[0].value;
+              t3.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t3, 3, 2);
+              t3.getElementsByClassName("quantity")[0].value = str;
+            });
+            t3.getElementsByClassName("s2")[0].addEventListener("click", function (e) {
+              var str = t3.getElementsByClassName("quantity")[0].value;
+              t3.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t3, 3, 2);
+              t3.getElementsByClassName("quantity")[0].value = str;
+            });
+
+            t3.getElementsByClassName("quantity")[0].addEventListener("click", function(e) {
+              this.value = "";
+            });
+            t3.getElementsByClassName("quantity")[0].addEventListener("input", function(e) {
+              updateTabInputs(t3, 3, 2);
+            });
+            t3.getElementsByClassName("quantity")[0].addEventListener("change", function(e) {
+              this.value = this.value + " kg";
+            });
+            //
+            // Tab input end
+            //
+
+            //
+            //TAB inputs
+            //One Tab 2
+            t2.getElementsByClassName("s1")[0].addEventListener("click", function (e) {
+              var str = t2.getElementsByClassName("quantity")[0].value;
+              t2.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t2, 2, 1);
+              t2.getElementsByClassName("quantity")[0].value = str;
+            });
+            t2.getElementsByClassName("s2")[0].addEventListener("click", function (e) {
+              var str = t2.getElementsByClassName("quantity")[0].value;
+              t2.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t2, 2, 1);
+              t2.getElementsByClassName("quantity")[0].value = str;
+            });
+
+            t2.getElementsByClassName("quantity")[0].addEventListener("click", function(e) {
+              this.value = "";
+            });
+            t2.getElementsByClassName("quantity")[0].addEventListener("input", function(e) {
+              updateTabInputs(t2, 2, 1);
+            });
+            t2.getElementsByClassName("quantity")[0].addEventListener("change", function(e) {
+              this.value = this.value + " kg";
+            });
+            //
+            // Tab input end
+            //
+
+            //
+            //TAB inputs
+            //One Tab 1
+            t4.getElementsByClassName("s1")[0].addEventListener("click", function (e) {
+              var str = t4.getElementsByClassName("quantity")[0].value;
+              t4.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t4, 3, 2);
+              t4.getElementsByClassName("quantity")[0].value = str;
+            });
+            t4.getElementsByClassName("s2")[0].addEventListener("click", function (e) {
+              var str = t4.getElementsByClassName("quantity")[0].value;
+              t4.getElementsByClassName("quantity")[0].value = str.replace(" kg", "");
+              updateTabInputs(t4, 3, 2);
+              t4.getElementsByClassName("quantity")[0].value = str;
+            });
+
+            t4.getElementsByClassName("quantity")[0].addEventListener("click", function(e) {
+              this.value = "";
+            });
+            t4.getElementsByClassName("quantity")[0].addEventListener("input", function(e) {
+              updateTabInputs(t4, 3, 2);
+            });
+            t4.getElementsByClassName("quantity")[0].addEventListener("change", function(e) {
+              this.value = this.value + " kg";
+            });
+            //
+            // Tab input end
+            //
+
+            function updateTabInputs(tab, i, j) {
+              if (tab.getElementsByClassName("s1")[0].checked) {
+                tab.getElementsByClassName("price")[0].innerHTML = parseInt(tab.getElementsByClassName("quantity")[0].value) * i + '$';
+              } else if (tab.getElementsByClassName("s2")[0].checked) {
+                tab.getElementsByClassName("price")[0].innerHTML = parseInt(tab.getElementsByClassName("quantity")[0].value) * j + '$';
+              } else {
+                tab.getElementsByClassName("price")[0].innerHTML = "Choose the supplier!";
+              }
+            }
+
             let now = Date.now();
             function timer(id) {
               let time = Date.now() - now;
@@ -712,19 +929,16 @@
                 case 1:
                   {
                     t1.style.left = i*i / 3000 + 'px';
-                    console.log(time);
                     break;
                   }
                   case 2:
                   {
                     t2.style.left = i*i / 3000 + 'px';
-                    console.log(time);
                     break;
                   }
                   case 3:
                   {
                     t3.style.left = i*i / 3000 + 'px';
-                    console.log(time);
                     break;
                   }
                   case 4:
@@ -736,33 +950,50 @@
               }
             }
 
+            var switchTab = 0;
+
             addEventListener("keypress", function( event ) {
-              switch(event.key) {
-                case "1":{
+              if (event.key == '[') {
+                if (switchTab > 0) {
+                  switchTab--;
+                } else {
+                  switchTab = 3;
+                }
+              } else if (event.key = ']') {
+                if (switchTab < 3) {
+                  switchTab++;
+                } else {
+                  switchTab = 0;
+                }
+              }
+              if (event.key == '[' || event.key == ']') {
+              switch(switchTab) {
+                case 0:{
                   tab("tab1");
                   now = Date.now();
                   setInterval(timer.bind(null, 1), 10);
                   break;
                 }
-                case "2":{
+                case 1:{
                   tab("tab2");
                   now = Date.now();
                   setInterval(timer.bind(null, 2), 10);
                   break;
                 }
-                case "3":{
+                case 2:{
                   tab("tab3");
                   now = Date.now();
                   setInterval(timer.bind(null, 3), 10);
                   break;
                 }
-                case "4":{
+                case 3:{
                   tab("tab4");
                   now = Date.now();
                   setInterval(timer.bind(null, 4), 10);
                   break;
                 }
-              }   
+              }  
+            } 
             }, false);
 
         </script>
@@ -817,5 +1048,5 @@
         audio.play();
       });
     </script>
-
+    <script type="text/javascript" src="script/index.js"></script>
 </body>
